@@ -12,12 +12,48 @@
 </head>
 <body>
     
-    
-    
-    <div class="container mt-2 mb-3">        
-        <a href="javascript:void(0)" class="container" onclick="openAddForm()">
+    <div class="d-flex p-2">
+        <div class="col-sm-9 col-md-9">
+
+            <!-- Add user form -->
+            <div class="container mt-3 my-1 border p-3 getAddUserForm" id="getAddUserForm">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h4>Add user to database</h4>
+                    <span class="bi bi-x fs-3 btnClose" onclick="closeAddUserForm()"></sn>
+                </div>
+
+                <form action="/add-user" method="post">
+                    <label for="name" class="fs-14">Name:</label>
+                    <input type="text" name="name" class="w-75 form-control mb-1" required>
+
+                    <label for="email" class="fs-14">Email:</label>
+                    <input type="email" name="email" class="w-75 form-control mt-1" required>
+            
+                    <button type="submit" class="fs-14 btn btn-primary my-2">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="mt-3 col-sm-3 col-md-3 border p-3">
+            <a href="javascript:void(0)" class="d-block" onclick="openAddForm()">
+                <button class="btn btn-secondary my-1 fs-13 w-100">New User</button>
+            </a>
+
+            <a href="javascript:void(0)" class="d-block" onclick="openEditForm()">
+                <button class="btn btn-secondary my-1 fs-13 w-100">Edit User</button>
+            </a>
+
+            <a href="javascript:void(0)" class="d-block" onclick="openDeleteForm()">
+                <button class="btn btn-secondary my-1 fs-13 w-100">Delete User</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- User forms -->
+    <div class="container mt-5 mb-3 h-75">        
+        <!-- <a href="javascript:void(0)" class="container" onclick="openAddForm()">
             <button class="btn btn-secondary my-4 fs-13">New User</button>
-        </a>
+        </a> -->
 
         <table class="table">
             <thead class="table-dark">
@@ -31,36 +67,18 @@
             
             <tbody>
                 <% userList.forEach(user => { %>
-				<tr>
+                <tr>
                     <td class="fs-14 pt-3"># <%= user.id %></td>
-					<td class="fs-14 pt-3"><%= user.name %></td>
-					<td class="fs-14 pt-3"><%= user.email %></td>
+                    <td class="fs-14 pt-3"><%= user.name %></td>
+                    <td class="fs-14 pt-3"><%= user.email %></td>
                     <td class="d-flex justify-content-end">
                         <button class="btn border bi bi-pen mx-1 fs-13"></button>
                         <button class="btn border bi bi-trash align-items-center fs-14"></button>
                     </td>
-				</tr>
+                </tr>
                 <% }); %>
             </tbody>
         </table>
-    </div>
-
-    <!-- Add user form -->
-    <div class="container mt-3 border p-3 getAddUserForm" id="getAddUserForm">
-        <div class="d-flex justify-content-between align-items-center">
-            <h4>Add user to database</h4>
-            <span class="bi bi-x fs-3"></sn>
-        </div>
-
-        <form action="/add-user" method="post">
-            <label for="name" class="fs-14">Name:</label>
-            <input type="text" name="name" class="w-75 form-control mb-1">
-
-            <label for="email" class="fs-14">Email:</label>
-            <input type="email" name="email" class="w-75 form-control mt-1">
-    
-            <button type="submit" class="fs-14 btn btn-primary my-2">Submit</button>
-        </form>
     </div>
 
     <script src="/js/addUser.js"></script>
