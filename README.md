@@ -3,7 +3,7 @@
 
 ## Features 
 - **Create**: Add new data to the system
-- **Read**: Retrieve data formm the system
+- **Read**: Retrieve data from the system
 - **Edit**: Modify existing data (Pending)
 - **Delete**: Remove unwanted records (Pending)
 
