@@ -36,6 +36,7 @@ router.post('/add-user', (req, res) => {
     userList.push(newUser);
     console.log(userList)
     res.redirect('/success');
+    // res.status(200)
 }); 
 
 module.exports = router;
