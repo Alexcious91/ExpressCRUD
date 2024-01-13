@@ -4,14 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Registered</title>
+    <!-- Page styles -->
+    <link rel="stylesheet" href="/assets/bootstrap/dist/css/bootstrap.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="/assets/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
     
-    <div class="container">
+    <div class="container justify-content-center">
+        <div class="bg-dark">
+            <h4>User Database Management</h4>
+        </div>
+    </div>
+
+    <div class="container m-auto justify-content-center">
         <h1 class="text-green">User Registered Successfully.</h1>
         <p>You will be redirected to the dashboard. Or manually click here <a href="/">home</a></p>
     </div>
 
+    <script src="../js/success.js"></script>
+
+    <script>
+        window.onload = redirectFunc;
+    </script>
 
 </body>
 </html>

@@ -16,7 +16,7 @@
         <div class="col-sm-9 col-md-9">
 
             <!-- Add user form -->
-            <div class="container mt-3 my-1 border p-3 getAddUserForm" id="getAddUserForm">
+            <div class="container mt-3 my-1 border rounded p-3 getAddUserForm" id="getAddUserForm">
                 <div class="d-flex justify-content-between align-items-center">
                     <h4>Add user to database</h4>
                     <span class="bi bi-x fs-3 btnClose" onclick="closeAddUserForm()"></sn>
@@ -28,23 +28,18 @@
 
                     <label for="email" class="fs-14">Email:</label>
                     <input type="email" name="email" class="w-75 form-control mt-1" required>
+
+                    <label for="email" class="fs-14">Contact Number:</label>
+                    <input type="number" name="contactNumber" pattern="\d{10}" title="Please enter 10 digits" class="w-75 form-control mt-1" required>
             
                     <button type="submit" class="fs-14 btn btn-primary my-2">Submit</button>
                 </form>
             </div>
         </div>
 
-        <div class="mt-3 col-sm-3 col-md-3 border p-3">
+        <div class="mt-3 col-sm-3 col-md-3 border rounded p-3">
             <a href="javascript:void(0)" class="d-block" onclick="openAddForm()">
                 <button class="btn btn-secondary my-1 fs-13 w-100">New User</button>
-            </a>
-
-            <a href="javascript:void(0)" class="d-block" onclick="openEditForm()">
-                <button class="btn btn-secondary my-1 fs-13 w-100">Edit User</button>
-            </a>
-
-            <a href="javascript:void(0)" class="d-block" onclick="openDeleteForm()">
-                <button class="btn btn-secondary my-1 fs-13 w-100">Delete User</button>
             </a>
         </div>
     </div>
@@ -61,6 +56,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>Contact no.</th>
                     <th class="d-flex justify-content-end px-5">Modify</th>
                 </tr>
             </thead>
@@ -71,9 +67,10 @@
                     <td class="fs-14 pt-3"># <%= user.id %></td>
                     <td class="fs-14 pt-3"><%= user.name %></td>
                     <td class="fs-14 pt-3"><%= user.email %></td>
+                    <td class="fs-14 pt-3"><%= user.contact %></td>
                     <td class="d-flex justify-content-end">
-                        <button class="btn border bi bi-pen mx-1 fs-13"></button>
-                        <button class="btn border bi bi-trash align-items-center fs-14"></button>
+                        <button class="btn border bi bi-pen mx-1 fs-13" onclick="openEditForm()"></button>
+                        <button class="btn border bi bi-trash align-items-center fs-14" onclick="openDeleteForm()"></button>
                     </td>
                 </tr>
                 <% }); %>
